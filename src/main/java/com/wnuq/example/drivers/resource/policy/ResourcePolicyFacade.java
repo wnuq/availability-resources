@@ -15,10 +15,14 @@ public class ResourcePolicyFacade {
     }
 
     public void completePhase(Long resourceId, PhaseType phaseType) {
-        resourcePolicyService.completePhase(resourceId, phaseType);
+        try {
+            resourcePolicyService.completePhase(resourceId, phaseType);
 
-        if(resourcePolicyService.isResourceCanBeCreated(resourceId)) {
-            availabilityFacade.create(resourceId);
+            if (resourcePolicyService.isResourceCanBeCreated(resourceId)) {
+                availabilityFacade.create(resourceId);
+            }
+        } catch (Exception e) {
+            //TODO: Add rollback for resource policy and availability if something bad happen
         }
     }
 }
