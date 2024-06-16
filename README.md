@@ -1,2 +1,3 @@
-# availability-resources
-present simple connection between availability and resource context.
+# Availability Resources
+Present simple connection between availability and resource context.
+
