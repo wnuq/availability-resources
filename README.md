@@ -1,5 +1,5 @@
 # Availability Resources
 Present simple connection between availability and resource context.
 
-![](\img\availability-example.png)
+![image not exist](img/availability-example.png)
 
